@@ -20,14 +20,18 @@ training localy or remotely, design of virtual characters, and creating uneqe ex
 
 ## bio
 
-Oct 2013 - Jul  2015 - **Software Engineer - ACLP**
+- <h3>Software Engineer - ACLP</h3>
+Oct 2013 - Jul  2015
 
-Jul 2015 - Dec 2020 - **software engineer \ researcher - NICE SYSTEMS**
 
+- <h3>software engineer \ researcher - NICE SYSTEMS</h3>
+Jul 2015 - Dec 2020 
 
-Oct 2020 - Oct 2023 - **Researcher - Advanced Reality Labs (ARL)**
+<h3>Researcher - Advanced Reality Labs (ARL)</h3>
+Oct 2020 - Oct 2023 
 
-Oct 2023 - now - **CTO - CoFounder - ARMEdic** (StartUP in the XR domain)
+<h3>CTO - CoFounder - ARMEdic</h3> (StartUP in the XR domain)
+Oct 2023 - now
 
 ## Publications
 
@@ -46,7 +50,8 @@ Computer Speech & Language · Feb 1, 2017Computer
 
 ## Projects
 
-Karting - Reinforcement learning karting agent. [Project Page](https://alonshoa.github.io/Karting/)
+Karting - Reinforcement learning karting agent. 
+[Project Page](https://alonshoa.github.io/Karting/)
 
 GPT goes to a bar - VR experiance with natural conversation abilities using GPT-3 as a virtual bartender - GALA competition (IVA - 22). [IVA22 website](https://ivaconference2022.ualg.pt/program/gala/)
 
