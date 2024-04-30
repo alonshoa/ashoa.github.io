@@ -35,41 +35,51 @@ Oct 2023 - now
 
 ## Publications
 
-- Sushi with Einstein: Enhancing Hybrid Live Events with LLM-Based Virtual HumansSushi with Einstein: Enhancing Hybrid Live Events with LLM-Based Virtual Humans
+- **Sushi with Einstein: Enhancing Hybrid Live Events with LLM-Based Virtual Humans**
 IVA 23 · Dec 22, 2023
 
-- Graph-based approach for voice authenticationGraph-based approach for voice authentication
+- **Graph-based approach for voice authenticationGraph-based approach for voice authentication**
 US US20200411010A1
 
-- Method and system for separating and authenticating speech of a speaker on an audio stream of speakersMethod and system for separating and authenticating speech of a speaker on an audio stream of speakers
+- **Method and system for separating and authenticating speech of a speaker on an audio stream of speakers**
 US US10885920B2US
 
-- 2017 - Generalized Viterbi-based models for time-series segmentation and clustering applied to speaker diarizationGeneralized Viterbi-based models for time-series segmentation and clustering applied to speaker diarization
+- **Generalized Viterbi-based models for time-series segmentation and clustering applied to speaker diarization**
 Computer Speech & Language · Feb 1, 2017Computer
 
 
 ## Projects
 
-Karting - Reinforcement learning karting agent. 
+- **Karting - Reinforcement learning karting agent**.
+
 [Project Page](https://alonshoa.github.io/Karting/)
 
-GPT goes to a bar - VR experiance with natural conversation abilities using GPT-3 as a virtual bartender - GALA competition (IVA - 22). [IVA22 website](https://ivaconference2022.ualg.pt/program/gala/)
+- **GPT goes to a bar**
+  
+VR experiance with natural conversation abilities using GPT-3 as a virtual bartender - GALA competition (IVA - 22).
+[IVA22 website](https://ivaconference2022.ualg.pt/program/gala/)
 
-Codex Code Generator - 
+- **Codex Code Generator**
+
 <img src="https://github.com/alonshoa/SW_IDE/raw/main/output.gif" />
 [project Github](https://github.com/alonshoa/SW_IDE)
 
-Sushi with Einstein -
+- **Sushi with Einstein**
+
 <iframe width="848" height="481" src="https://www.youtube.com/embed/98QKzT1dkpo" title="Three Scientists and a Philosopher Go to a Bar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 [Vdieo](https://youtu.be/98QKzT1dkpo?t=30)
 
 
 
-a Date with Frued -
+- **a Date with Frued**
 
 <iframe width="848" height="481" src="https://www.youtube.com/embed/gh4LszoIQ94" title="Date with Freud; XR and AI Live Performance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 ## Education
+
+Bsc - Sodtware Engineering - 2010 - 2014 - Afeka
+
+Msc - Computer Science - Machine learning - 2020 - 2024 - Reichman University (IDC)
 
