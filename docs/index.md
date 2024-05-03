@@ -20,18 +20,7 @@ training localy or remotely, design of virtual characters, and creating uneqe ex
 
 ## bio
 
-- <h3>Software Engineer - ACLP</h3>
-Oct 2013 - Jul  2015
-
-
-- <h3>software engineer \ researcher - NICE SYSTEMS</h3>
-Jul 2015 - Dec 2020 
-
-<h3>Researcher - Advanced Reality Labs (ARL)</h3>
-Oct 2020 - Oct 2023 
-
-<h3>CTO - CoFounder - ARMEdic</h3> (StartUP in the XR domain)
-Oct 2023 - now
+{% include bio.md %}
 
 ## Publications
 
