@@ -6,21 +6,19 @@
 
 - **GPT goes to a bar**
   
-VR experience with natural conversation abilities using GPT-3 as a virtual bartender - best demo (competition winier) - GALA competition (IVA 2022).
+VR experience with natural conversation abilities using GPT-3 as a virtual bartender - Best Demo (competition winier) - GALA competition (IVA 2022).
 
-has a demo presenting [IVA22 website](https://ivaconference2022.ualg.pt/program/gala/)
+[IVA22 website](https://ivaconference2022.ualg.pt/program/gala/)
 
 - **Codex Code Generator**
 
 This was a project I did for the fun of it,
 it's a small simple IDE that was (fully) written by a LLM model. (Open-ai Codex)
 
-<!-- <img src="https://github.com/alonshoa/SW_IDE/raw/main/output.gif" /> -->
-<!-- [Project Repo](https://github.com/alonshoa/SW_IDE) -->
+<img src="https://github.com/alonshoa/SW_IDE/raw/main/output.gif" /> -->
+[Project Repo](https://github.com/alonshoa/SW_IDE)
 
-<a href="https://alonshoa.github.io/Karting/">
-    <img src="https://api.pagepeeker.com/v2/thumbs.php?size=m&url=https://alonshoa.github.io/Karting/" alt="Website Thumbnail">
-</a>
+
 
 - **Sushi with Einstein**
 
