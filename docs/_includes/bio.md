@@ -1,9 +1,9 @@
 
-<h3>CoFounder - ARMEdic</h3> (StartUP in the XR domain)
+- <h3>CoFounder - ARMEdic</h3> (StartUP in the XR domain)
 Oct 2023 - now
 
 
-<h3>Researcher - Advanced Reality Labs (ARL)</h3>
+- <h3>Researcher - Advanced Reality Labs (ARL)</h3>
 Oct 2020 - Oct 2023 
 
 

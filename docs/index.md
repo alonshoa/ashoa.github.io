@@ -39,31 +39,6 @@ Computer Speech & Language · Feb 1, 2017Computer
 
 ## Projects
 
-- **Karting - Reinforcement learning karting agent**.
-
-[Project Page](https://alonshoa.github.io/Karting/)
-
-- **GPT goes to a bar**
-  
-VR experiance with natural conversation abilities using GPT-3 as a virtual bartender - GALA competition (IVA - 22).
-[IVA22 website](https://ivaconference2022.ualg.pt/program/gala/)
-
-- **Codex Code Generator**
-
-<img src="https://github.com/alonshoa/SW_IDE/raw/main/output.gif" />
-[project Github](https://github.com/alonshoa/SW_IDE)
-
-- **Sushi with Einstein**
-
-<iframe width="848" height="481" src="https://www.youtube.com/embed/98QKzT1dkpo" title="Three Scientists and a Philosopher Go to a Bar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-[Vdieo](https://youtu.be/98QKzT1dkpo?t=30)
-
-
-
-- **a Date with Frued**
-
-<iframe width="848" height="481" src="https://www.youtube.com/embed/gh4LszoIQ94" title="Date with Freud; XR and AI Live Performance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 ## Education
