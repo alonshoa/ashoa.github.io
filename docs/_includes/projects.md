@@ -26,10 +26,9 @@ VR experience with natural conversation abilities using GPT-3 as a virtual barte
 
 ### **Sushi with Einstein**
 
+
+
 <iframe src="https://www.youtube.com/embed/98QKzT1dkpo" title="Three Scientists and a Philosopher Go to a Bar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-[Video](https://youtu.be/98QKzT1dkpo?t=30)
-
 
 
 ### **a Date with Freud**
