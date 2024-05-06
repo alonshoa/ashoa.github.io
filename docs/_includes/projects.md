@@ -19,7 +19,7 @@ it's a small simple IDE that was (fully) written by LLM model. (Open-ai Codex)
 
 ### **GPT goes to a bar**
   
-VR experience with natural conversation abilities using GPT-3 as a virtual bartender - Best Demo (competition winier) - GALA competition (IVA 2022).
+VR experience with natural conversation abilities using GPT-3 as a virtual bartender - Best Demo (competition winning submission) - GALA competition (IVA 2022).
 
 [IVA22 website](https://ivaconference2022.ualg.pt/program/gala/)
 
