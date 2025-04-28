@@ -1,5 +1,5 @@
 
-- **Teacher - HighSchool teaching intro deep learning **
+- **Teacher - HighSchool teaching intro deep learning**
 Feb 2025 - Now
 
 - **Cofounder [ARMedic](https://telemedic-solutions.github.io/)**
