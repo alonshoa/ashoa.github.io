@@ -1,8 +1,10 @@
 
-- **Cofounder [ARMedic](https://telemedic-solutions.github.io/)**
+- **Teacher - HighSchool teaching intro deep learning **
+Feb 2025 - Now
 
+- **Cofounder [ARMedic](https://telemedic-solutions.github.io/)**
  (a Start-Up in the healthcare + XR domain)
-Oct 2023 - now
+Oct 2023 - June 2024 
 
 
 - **Researcher - Advanced Reality Labs (ARL)**
