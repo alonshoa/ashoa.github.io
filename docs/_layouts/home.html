@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div class="home-hero">
+  <h1>{{ page.title | default: site.title }}</h1>
+  {% if page.cta_primary_url %}
+  <div class="hero-ctas">
+    <a class="btn btn--primary" href="{{ page.cta_primary_url | relative_url }}">{{ page.cta_primary_label }}</a>
+    {% if page.cta_secondary_url %}
+    <a class="btn" href="{{ page.cta_secondary_url | relative_url }}">{{ page.cta_secondary_label }}</a>
+    {% endif %}
+  </div>
+  {% endif %}
+  {% if page.hero_subtitle %}
+  <p class="hero-subtitle">{{ page.hero_subtitle }}</p>
+  {% endif %}
+</div>
+
+{% if page.featured_sections %}
+  {% for section in page.featured_sections %}
+    <section class="featured-block">
+      <header>
+        <h2>{{ section.title }}</h2>
+        {% if section.link_url %}
+        <a class="see-all" href="{{ section.link_url | relative_url }}">{{ section.link_label | default: 'View all' }}</a>
+        {% endif %}
+      </header>
+      <div class="featured-content">
+        {% include {{ section.include }} %}
+      </div>
+    </section>
+  {% endfor %}
+{% endif %}
+
+{{ content }}

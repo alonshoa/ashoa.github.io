@@ -1,0 +1,8 @@
+{% assign lang = page.lang | default: site.lang %}
+<div class="language-toggle">
+  {% if lang == 'he' and page.alt_url_en %}
+    <a href="{{ page.alt_url_en | relative_url }}">EN</a>
+  {% elsif lang != 'he' and page.alt_url_he %}
+    <a href="{{ page.alt_url_he | relative_url }}">HE</a>
+  {% endif %}
+</div>

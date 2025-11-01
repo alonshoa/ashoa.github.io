@@ -1,0 +1,9 @@
+{% assign publication = include.item | default: include.publication %}
+<article class="publication-card">
+  <h3><a href="{{ publication.url | relative_url }}">{{ publication.title }}</a></h3>
+  {% if publication.venue %}<p class="venue">{{ publication.venue }}</p>{% endif %}
+  {% if publication.lay_summary %}<p class="summary">{{ publication.lay_summary }}</p>{% endif %}
+  {% if publication.pdf %}
+  <a class="btn" href="{{ publication.pdf }}">Read paper</a>
+  {% endif %}
+</article>

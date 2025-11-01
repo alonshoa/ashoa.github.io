@@ -1,0 +1,19 @@
+{% assign project = include.item | default: include.project %}
+<article class="project-card">
+  <a href="{{ project.url | relative_url }}">
+    {% if project.hero_video %}
+      <video autoplay muted loop playsinline src="{{ project.hero_video | relative_url }}"></video>
+    {% elsif project.hero_image %}
+      <img src="{{ project.hero_image }}" alt="{{ project.title }}">
+    {% elsif project.thumb %}
+      <img src="{{ project.thumb | relative_url }}" alt="{{ project.title }}">
+    {% endif %}
+    <h3>{{ project.title }}</h3>
+    {% if project.sub %}<p class="sub">{{ project.sub }}</p>{% endif %}
+    {% if project.tags %}
+    <ul class="tags">
+      {% for t in project.tags %}<li>{{ t }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </a>
+</article>

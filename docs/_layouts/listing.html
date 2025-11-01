@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+{% assign collection_name = page.collection | default: page.list_collection %}
+{% assign documents = site[collection_name] | sort: 'date' | reverse %}
+
+{% if page.tag %}
+  {% assign filtered = '' | split: '' %}
+  {% for item in documents %}
+    {% if item.tags contains page.tag %}
+      {% assign filtered = filtered | push: item %}
+    {% endif %}
+  {% endfor %}
+  {% assign documents = filtered %}
+{% endif %}
+
+<header class="listing-header">
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}
+    <p>{{ page.description }}</p>
+  {% endif %}
+</header>
+
+<div class="listing-grid">
+  {% for item in documents %}
+    {% include {{ page.card_include | default: 'project-card.html' }} item=item %}
+  {% endfor %}
+</div>
+
+{{ content }}

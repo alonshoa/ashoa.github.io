@@ -1,0 +1,20 @@
+<header class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      {% if site.data.nav.main %}
+      <nav class="site-nav">
+        <ul class="masthead__menu-items">
+          {% for item in site.data.nav.main %}
+          <li class="masthead__menu-item"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+      {% endif %}
+    </div>
+    <div class="masthead__actions">
+      {% include language-toggle.html %}
+      <button class="dark-mode-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </div>
+</header>

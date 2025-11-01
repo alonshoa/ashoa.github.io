@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<article class="detail{% if page.lang == 'he' %} detail--rtl{% endif %}" {% if page.lang == 'he' %}dir="rtl"{% endif %}>
+  <header class="detail-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.sub %}<p class="detail-sub">{{ page.sub }}</p>{% endif %}
+    {% if page.tags %}
+    <ul class="detail-tags">
+      {% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% if page.hero_video %}
+      <video autoplay muted loop playsinline src="{{ page.hero_video | relative_url }}"></video>
+    {% elsif page.hero_image %}
+      <img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}">
+    {% elsif page.hero_iframe %}
+      <div class="detail-embed">
+        <iframe src="{{ page.hero_iframe }}" allowfullscreen loading="lazy"></iframe>
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="detail-body">
+    {{ content }}
+  </div>
+
+  {% if page.resources %}
+  <section class="detail-resources">
+    <h2>{{ page.resources_title | default: 'Resources' }}</h2>
+    <ul>
+      {% for resource in page.resources %}
+      <li><a href="{{ resource.url | relative_url }}">{{ resource.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>

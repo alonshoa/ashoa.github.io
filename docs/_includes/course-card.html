@@ -1,0 +1,14 @@
+{% assign course = include.item | default: include.course %}
+<article class="course-card">
+  <a href="{{ course.url | relative_url }}">
+    <h3>{{ course.title }}</h3>
+    {% if course.goals %}
+    <ul class="goals">
+      {% for goal in course.goals limit: 3 %}<li>{{ goal }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% if course.artifacts %}
+    <p class="artifacts">{{ course.artifacts | size }} resources</p>
+    {% endif %}
+  </a>
+</article>
