@@ -84,43 +84,129 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="work">
-    <div class="section-inner">
-      <div class="section-heading">
-        <h2>Selected Work</h2>
+<section class="section section-alt" id="work">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>Selected Work</h2>
+      <p>
+        A selection of projects exploring artificial intelligence,
+        interactive systems, and visual approaches to understanding
+        machine learning.
+      </p>
+    </div>
+
+    <div class="grid grid-2">
+
+      <article class="card">
+        <h3>Conversational NPC</h3>
         <p>
-          A curated set of projects can live here, each with a short summary,
-          your role, the domain, and links to a repo, demo, paper, or video.
+          A conversational game character powered by GPT-based dialogue systems,
+          allowing players to speak with NPCs in real time.
         </p>
+        <div class="card-meta">
+          <span class="chip">AI Agents</span>
+          <span class="chip">Games</span>
+          <span class="chip">LLMs</span>
+        </div>
+        <button
+          class="video-preview"
+          type="button"
+          data-video-gallery="npc-dialogue"
+          data-video-start="0"
+          aria-label="Open Conversational NPC video gallery"
+        >
+          <span class="video-preview-media">
+            <img
+              src="https://img.youtube.com/vi/gh4LszoIQ94/hqdefault.jpg"
+              alt="Conversational NPC project video thumbnail"
+            />
+            <span class="video-preview-play">Watch project videos</span>
+          </span>
+        </button>
+        <p class="video-preview-caption">Open a lightbox gallery with multiple project clips.</p>
+      </article>
+
+      <article class="card">
+        <h3>Reinforcement Learning Karting</h3>
+        <p>
+          Training autonomous driving behavior in a kart racing simulation
+          using Unity ML-Agents.
+        </p>
+        <div class="card-meta">
+          <span class="chip">Reinforcement Learning</span>
+          <span class="chip">Simulation</span>
+          <span class="chip">Unity</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Visual Neural Network Playground</h3>
+        <p>
+          An interactive environment that helps learners understand how
+          neural networks learn through visual experimentation.
+        </p>
+        <div class="card-meta">
+          <span class="chip">AI Education</span>
+          <span class="chip">Visualization</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Machine Learning Visualizations</h3>
+        <p>
+          A collection of animated explanations of machine learning
+          and deep learning concepts built with Manim.
+        </p>
+        <div class="card-meta">
+          <span class="chip">Visualization</span>
+          <span class="chip">Deep Learning</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<div id="videoModal" class="video-modal" hidden>
+  <div
+    class="video-modal-content"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="videoTitle"
+  >
+    <button id="closeVideoModalBtn" class="close-btn" type="button" aria-label="Close video gallery">
+      &times;
+    </button>
+
+    <div class="video-frame-shell">
+      <button id="prevVideoBtn" class="gallery-side-btn gallery-side-btn-left" type="button" aria-label="Previous video">
+        &larr;
+      </button>
+      <div class="video-frame-wrapper">
+        <iframe
+          id="videoFrame"
+          src=""
+          title="Project video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
       </div>
-      <div class="grid grid-3">
-        <article class="card">
-          <h3>Featured Project</h3>
-          <p>Use this card for one of your strongest projects with a screenshot or demo.</p>
-          <div class="card-meta">
-            <span class="chip">AI</span>
-            <span class="chip">Interactive Systems</span>
-          </div>
-        </article>
-        <article class="card">
-          <h3>Featured Project</h3>
-          <p>Add another project here, such as XR work, RL experiments, or tooling.</p>
-          <div class="card-meta">
-            <span class="chip">XR</span>
-            <span class="chip">Research</span>
-          </div>
-        </article>
-        <article class="card">
-          <h3>Featured Project</h3>
-          <p>This slot can highlight a visual explainer, demo, or educational build.</p>
-          <div class="card-meta">
-            <span class="chip">Visualization</span>
-            <span class="chip">Teaching</span>
-          </div>
-        </article>
+      <button id="nextVideoBtn" class="gallery-side-btn gallery-side-btn-right" type="button" aria-label="Next video">
+        &rarr;
+      </button>
+    </div>
+
+    <div class="video-controls">
+      <div class="video-copy">
+        <span class="video-kicker" id="videoGalleryLabel">Project Videos</span>
+        <span id="videoTitle">Video title</span>
       </div>
     </div>
-  </section>
+
+    <div id="videoThumbnails" class="video-thumbnails"></div>
+  </div>
+</div>
 
 <section class="section" id="research">
   <div class="section-inner">
@@ -328,6 +414,181 @@
   </footer>
 
   <script>
+    const projectVideoGalleries = {
+      "npc-dialogue": {
+        label: "Conversational NPC",
+        videos: [
+          {
+            title: "NPC Demo 1",
+            youtubeId: "gh4LszoIQ94"
+          },
+          {
+            title: "NPC Demo 2",
+            youtubeId: "dQw4w9WgXcQ"
+          },
+          {
+            title: "NPC Demo 3",
+            youtubeId: "3JZ_D3ELwOQ"
+          }
+        ]
+      },
+      
+    };
+
+    const videoModal = document.getElementById("videoModal");
+    const videoFrame = document.getElementById("videoFrame");
+    const videoFrameWrapper = videoFrame ? videoFrame.closest(".video-frame-wrapper") : null;
+    const videoTitle = document.getElementById("videoTitle");
+    const videoGalleryLabel = document.getElementById("videoGalleryLabel");
+    const videoThumbnails = document.getElementById("videoThumbnails");
+    const prevVideoBtn = document.getElementById("prevVideoBtn");
+    const nextVideoBtn = document.getElementById("nextVideoBtn");
+    const closeVideoModalBtn = document.getElementById("closeVideoModalBtn");
+
+    let activeGalleryKey = null;
+    let activeVideoIndex = 0;
+    let lastTriggerButton = null;
+
+    function getEmbedUrl(videoId) {
+      return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    }
+
+    function getActiveGallery() {
+      return activeGalleryKey ? projectVideoGalleries[activeGalleryKey] : null;
+    }
+
+    function renderVideoThumbnails() {
+      const gallery = getActiveGallery();
+      if (!gallery || !videoThumbnails) {
+        return;
+      }
+
+      videoThumbnails.innerHTML = "";
+
+      gallery.videos.forEach((video, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = `video-thumb${index === activeVideoIndex ? " active" : ""}`;
+        button.setAttribute("aria-label", `Play ${video.title}`);
+        button.innerHTML = `
+          <img src="https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg" alt="${video.title}">
+          <span class="video-thumb-title">${video.title}</span>
+        `;
+        button.addEventListener("click", () => setActiveVideo(index));
+        videoThumbnails.appendChild(button);
+      });
+    }
+
+    function setActiveVideo(index) {
+      const gallery = getActiveGallery();
+      if (!gallery || !gallery.videos[index]) {
+        return;
+      }
+
+      activeVideoIndex = index;
+      const video = gallery.videos[index];
+
+      if (videoFrameWrapper) {
+        videoFrameWrapper.classList.remove("is-transitioning");
+        void videoFrameWrapper.offsetWidth;
+        videoFrameWrapper.classList.add("is-transitioning");
+      }
+
+      if (videoFrame) {
+        videoFrame.src = getEmbedUrl(video.youtubeId);
+      }
+      if (videoTitle) {
+        videoTitle.textContent = video.title;
+      }
+      if (videoGalleryLabel) {
+        videoGalleryLabel.textContent = gallery.label;
+      }
+
+      renderVideoThumbnails();
+    }
+
+    function openVideoGallery(galleryKey, startIndex = 0, triggerButton = null) {
+      const gallery = projectVideoGalleries[galleryKey];
+      if (!gallery || !videoModal) {
+        return;
+      }
+
+      activeGalleryKey = galleryKey;
+      lastTriggerButton = triggerButton;
+      videoModal.hidden = false;
+      document.body.style.overflow = "hidden";
+      setActiveVideo(startIndex);
+    }
+
+    function closeVideoGallery() {
+      if (!videoModal) {
+        return;
+      }
+
+      videoModal.hidden = true;
+      document.body.style.overflow = "";
+      if (videoFrame) {
+        videoFrame.src = "";
+      }
+
+      if (lastTriggerButton) {
+        lastTriggerButton.focus();
+      }
+    }
+
+    function showAdjacentVideo(direction) {
+      const gallery = getActiveGallery();
+      if (!gallery) {
+        return;
+      }
+
+      const nextIndex =
+        (activeVideoIndex + direction + gallery.videos.length) % gallery.videos.length;
+      setActiveVideo(nextIndex);
+    }
+
+    document.querySelectorAll("[data-video-gallery]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const galleryKey = button.getAttribute("data-video-gallery");
+        const startIndex = Number(button.getAttribute("data-video-start") || 0);
+        openVideoGallery(galleryKey, startIndex, button);
+      });
+    });
+
+    if (prevVideoBtn) {
+      prevVideoBtn.addEventListener("click", () => showAdjacentVideo(-1));
+    }
+
+    if (nextVideoBtn) {
+      nextVideoBtn.addEventListener("click", () => showAdjacentVideo(1));
+    }
+
+    if (closeVideoModalBtn) {
+      closeVideoModalBtn.addEventListener("click", closeVideoGallery);
+    }
+
+    if (videoModal) {
+      videoModal.addEventListener("click", (event) => {
+        if (event.target === videoModal) {
+          closeVideoGallery();
+        }
+      });
+    }
+
+    window.addEventListener("keydown", (event) => {
+      if (!videoModal || videoModal.hidden) {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        closeVideoGallery();
+      } else if (event.key === "ArrowRight") {
+        showAdjacentVideo(1);
+      } else if (event.key === "ArrowLeft") {
+        showAdjacentVideo(-1);
+      }
+    });
+
     const canvas = document.getElementById("neural-canvas");
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
