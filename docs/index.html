@@ -103,27 +103,27 @@
           A conversational game character powered by GPT-based dialogue systems,
           allowing players to speak with NPCs in real time.
         </p>
-        <div class="card-meta">
-          <span class="chip">AI Agents</span>
-          <span class="chip">Games</span>
-          <span class="chip">LLMs</span>
-        </div>
         <button
-          class="video-preview"
-          type="button"
-          data-video-gallery="npc-dialogue"
-          data-video-start="0"
-          aria-label="Open Conversational NPC video gallery"
+        class="video-preview"
+        type="button"
+        data-video-gallery="npc-dialogue"
+        data-video-start="0"
+        aria-label="Open Conversational NPC video gallery"
         >
-          <span class="video-preview-media">
-            <img
-              src="https://img.youtube.com/vi/gh4LszoIQ94/hqdefault.jpg"
-              alt="Conversational NPC project video thumbnail"
-            />
-            <span class="video-preview-play">Watch project videos</span>
-          </span>
-        </button>
-        <p class="video-preview-caption">Open a lightbox gallery with multiple project clips.</p>
+        <span class="video-preview-media">
+          <img
+          src="https://img.youtube.com/vi/gh4LszoIQ94/hqdefault.jpg"
+          alt="Conversational NPC project video thumbnail"
+          />
+          <span class="video-preview-play">Watch project videos</span>
+        </span>
+      </button>
+
+      <div class="card-meta">
+        <span class="chip">AI Agents</span>
+        <span class="chip">Games</span>
+        <span class="chip">LLMs</span>
+      </div>
       </article>
 
       <article class="card">
@@ -132,10 +132,23 @@
           Training autonomous driving behavior in a kart racing simulation
           using Unity ML-Agents.
         </p>
+        <button
+          class="video-preview"
+          type="button"
+          data-video-gallery="karting"
+          data-video-start="0"
+          aria-label="Open Reinforcement Learning Karting video gallery"
+        >
+          <span class="video-preview-media video-preview-fallback">
+            <span class="video-preview-fallback-label">Karting Demo</span>
+            <span class="video-preview-play">Watch driving demo</span>
+          </span>
+        </button>
         <div class="card-meta">
           <span class="chip">Reinforcement Learning</span>
           <span class="chip">Simulation</span>
           <span class="chip">Unity</span>
+          <span class="chip">1 Video</span>
         </div>
       </article>
 
@@ -191,6 +204,7 @@
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
+        <video id="videoPlayer" class="video-native-player" controls playsinline preload="metadata"></video>
       </div>
       <button id="nextVideoBtn" class="gallery-side-btn gallery-side-btn-right" type="button" aria-label="Next video">
         &rarr;
@@ -432,11 +446,20 @@
           }
         ]
       },
-      
+      karting: {
+        label: "Reinforcement Learning Karting",
+        videos: [
+          {
+            title: "Karting Driving Demo",
+            mp4Src: "https://raw.githubusercontent.com/alonshoa/Karting/master/docs/images/movie.mp4"
+          }
+        ]
+      },
     };
 
     const videoModal = document.getElementById("videoModal");
     const videoFrame = document.getElementById("videoFrame");
+    const videoPlayer = document.getElementById("videoPlayer");
     const videoFrameWrapper = videoFrame ? videoFrame.closest(".video-frame-wrapper") : null;
     const videoTitle = document.getElementById("videoTitle");
     const videoGalleryLabel = document.getElementById("videoGalleryLabel");
@@ -451,6 +474,34 @@
 
     function getEmbedUrl(videoId) {
       return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    }
+
+    function getThumbnailUrl(video) {
+      if (video.thumbnailSrc) {
+        return video.thumbnailSrc;
+      }
+
+      if (video.youtubeId) {
+        return `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
+      }
+
+      return "";
+    }
+
+    function clearActivePlayer() {
+      if (videoFrame) {
+        videoFrame.src = "";
+      }
+
+      if (videoPlayer) {
+        videoPlayer.pause();
+        videoPlayer.removeAttribute("src");
+        videoPlayer.load();
+      }
+
+      if (videoFrameWrapper) {
+        videoFrameWrapper.classList.remove("is-native-video");
+      }
     }
 
     function getActiveGallery() {
@@ -470,10 +521,19 @@
         button.type = "button";
         button.className = `video-thumb${index === activeVideoIndex ? " active" : ""}`;
         button.setAttribute("aria-label", `Play ${video.title}`);
-        button.innerHTML = `
-          <img src="https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg" alt="${video.title}">
-          <span class="video-thumb-title">${video.title}</span>
-        `;
+        const thumbnailUrl = getThumbnailUrl(video);
+
+        if (thumbnailUrl) {
+          button.innerHTML = `
+            <img src="${thumbnailUrl}" alt="${video.title}">
+            <span class="video-thumb-title">${video.title}</span>
+          `;
+        } else {
+          button.innerHTML = `
+            <span class="video-thumb-fallback">${video.title}</span>
+            <span class="video-thumb-title">${video.title}</span>
+          `;
+        }
         button.addEventListener("click", () => setActiveVideo(index));
         videoThumbnails.appendChild(button);
       });
@@ -494,7 +554,15 @@
         videoFrameWrapper.classList.add("is-transitioning");
       }
 
-      if (videoFrame) {
+      clearActivePlayer();
+
+      if (video.mp4Src && videoPlayer) {
+        if (videoFrameWrapper) {
+          videoFrameWrapper.classList.add("is-native-video");
+        }
+        videoPlayer.src = video.mp4Src;
+        videoPlayer.play().catch(() => {});
+      } else if (videoFrame && video.youtubeId) {
         videoFrame.src = getEmbedUrl(video.youtubeId);
       }
       if (videoTitle) {
@@ -527,9 +595,7 @@
 
       videoModal.hidden = true;
       document.body.style.overflow = "";
-      if (videoFrame) {
-        videoFrame.src = "";
-      }
+      clearActivePlayer();
 
       if (lastTriggerButton) {
         lastTriggerButton.focus();
