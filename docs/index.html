@@ -18,7 +18,6 @@
       <a href="#work">Work</a>
       <a href="#research">Research</a>
       <a href="#teaching">Teaching</a>
-      <a href="#media">Media</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -103,6 +102,11 @@
           A conversational game character powered by GPT-based dialogue systems,
           allowing players to speak with NPCs in real time.
         </p>
+        <p class="card-link-row">
+          <a class="card-link" href="https://github.com/Advanced-Reality-Lab/Milo" target="_blank" rel="noopener">
+            GitHub repo
+          </a>
+        </p>
         <button
         class="video-preview"
         type="button"
@@ -132,6 +136,11 @@
           Training autonomous driving behavior in a kart racing simulation
           using Unity ML-Agents.
         </p>
+        <p class="card-link-row">
+          <a class="card-link" href="https://github.com/alonshoa/Karting" target="_blank" rel="noopener">
+            GitHub repo
+          </a>
+        </p>
         <button
           class="video-preview"
           type="button"
@@ -158,6 +167,11 @@
           An interactive environment that helps learners understand how
           neural networks learn through visual experimentation.
         </p>
+        <p class="card-link-row">
+          <a class="card-link" href="https://ai.studio/apps/9af92c39-bce4-44f7-ba31-2404d9d2c838" target="_blank" rel="noopener">
+            Try the demo
+          </a>
+        </p>
         <div class="card-meta">
           <span class="chip">AI Education</span>
           <span class="chip">Visualization</span>
@@ -170,6 +184,20 @@
           A collection of animated explanations of machine learning
           and deep learning concepts built with Manim.
         </p>
+        <p class="card-link-row">
+        </p>
+        <button
+          class="video-preview"
+          type="button"
+          data-video-gallery="ml-visualizations"
+          data-video-start="0"
+          aria-label="Open Machine Learning Visualizations video gallery"
+        >
+          <span class="video-preview-media video-preview-fallback">
+            <span class="video-preview-fallback-label">ML Visualizations</span>
+            <span class="video-preview-play">Watch visualizations</span>
+          </span>
+        </button>
         <div class="card-meta">
           <span class="chip">Visualization</span>
           <span class="chip">Deep Learning</span>
@@ -455,6 +483,28 @@
           }
         ]
       },
+      "ml-visualizations": {
+        label: "Machine Learning Visualizations",
+        videos: [
+          {
+            title: "One-Hot Encoding Explained",
+            youtubeId: "6qk9YdVvpU4"
+          },
+          {
+            title: "Categorical Cross-Entropy Loss Explained",
+            youtubeId: "-F9a8xbKwsw"
+          },
+          {
+            title: "Flatten Matrix Operation Explained",
+            youtubeId: "DvmncrAYNbw"
+          },
+          {
+            title: "Binary Cross-Entropy Loss Explained",
+            youtubeId: "_rabgploPDY"
+          }
+
+        ]
+      }
     };
 
     const videoModal = document.getElementById("videoModal");

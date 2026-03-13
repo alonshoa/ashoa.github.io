@@ -299,6 +299,28 @@ h1 {
   line-height: 1.7;
 }
 
+.card-link-row {
+  margin-top: 16px;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.card-link::after {
+  content: "->";
+  color: rgba(125, 211, 252, 0.9);
+}
+
+.card-link:hover,
+.card-link:focus-visible {
+  text-decoration: underline;
+}
+
 .card-meta {
   margin-top: 16px;
   display: flex;
